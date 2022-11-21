@@ -37,6 +37,10 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/perfil">Perfil</a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/compra">Compra</a>
+        </li>
       </ul>
      
     </div>

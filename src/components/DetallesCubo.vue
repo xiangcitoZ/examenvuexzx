@@ -11,6 +11,9 @@
         <h3>Precio: {{ cubo.precio }}</h3>
         <h3>Valoracion: {{ cubo.valoracion }}</h3>
         <br />
+        <button class="btn btn-info" @click="insertarPedido()">Añadir pedido</button>
+
+        <br />
         <br />
         <table class="table table-bordered table-warning">
           <thead>
@@ -20,7 +23,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="comentarios in comentarios" :key="comentarios.idComentario">
+            <tr
+              v-for="comentarios in comentarios"
+              :key="comentarios.idComentario"
+            >
               <td>{{ comentarios.comentario }}</td>
               <td>{{ comentarios.fechaComentarios }}</td>
             </tr>
@@ -54,6 +60,13 @@ export default {
     //METODO PARA VOLVER
     volver() {
       this.$router.push("/home/");
+    },
+
+    insertarPedido() {
+      this.id = this.$route.params.id;
+      service.insertarPedido(this.id).then((result) => {
+        this.cubo = result;
+      });
     },
 
     loadDetallesCubo() {

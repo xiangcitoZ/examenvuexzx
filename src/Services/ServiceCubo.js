@@ -88,7 +88,7 @@ export default class ServiceCubo {
         })
     }
 
-    getComentarios(id){
+    getComentarios(id) {
         return new Promise(function (resolve) {
             var request = "/api/ComentariosCubo/GetComentariosCubo/" + id;
             var url = Global.urlApiCubo + request;
@@ -100,6 +100,27 @@ export default class ServiceCubo {
         })
     }
 
+    compraUsuario() {
+        return new Promise(function (resolve) {
+            var request = "/api/Compra/ComprasUsuario";
+            var url = Global.urlApiCubo + request;
+            var compra = [];
+            axios.get(url).then(response => {
+                compra = response.data;
+                resolve(compra);
+            })
+        })
+    }
 
+    insertarPedido(id) {
+        return new Promise(function (resolve) {
+            var request = "/api/Compra/InsertarPedido/" + id;
+            var url = Global.urlApiCubo + request;
+
+            axios.post(url, id).then(response => {
+                resolve(response);
+            })
+        });
+    }
 }
 

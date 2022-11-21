@@ -1,11 +1,13 @@
 <template>
     
     <div >
+        <h1>Mi perfil</h1>
         <div style="width:500px; margin: 0 auto" >
         <form method="post"    >
-            
-            <h1 style="color:blue">Usuario: {{usuario.nombre}} </h1>       
-            <h3>Email: {{usuario.email}}</h3>
+            <br/>
+            <br/>
+            <h3 style="color:blue">Usuario: {{usuario.nombre}} </h3>       
+            <h3 style="color:blue"> Email: {{usuario.email}}</h3>
  
 
         </form>
